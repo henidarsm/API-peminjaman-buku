@@ -220,7 +220,7 @@ Tes ini memeriksa validasi dan aturan status tanpa perlu koneksi Supabase.
    - `SUPABASE_URL` = Project URL Supabase
    - `SUPABASE_KEY` = anon/public key Supabase
 4. Klik **Deploy**. `vercel.json` sudah mengarahkan request ke `src/index.js`.
-5. Setelah berhasil, uji `https://LINK-VERCEL-KAMU.vercel.app/api/health`, lalu coba `/api/loans`.
+5. Setelah berhasil, uji `https://api-peminjaman-buku.vercel.app/api/health`, lalu coba `/api/loans`.
 
 ## Susunan folder
 
@@ -250,10 +250,10 @@ perpustakaan-api/
 
 ## Link deployment
 
-- **Base URL Vercel:** https://LINK-VERCEL-KAMU.vercel.app
-- Cek server: https://LINK-VERCEL-KAMU.vercel.app/api/health
-- Daftar peminjaman: https://LINK-VERCEL-KAMU.vercel.app/api/loans
-- Filter terlambat: https://LINK-VERCEL-KAMU.vercel.app/api/loans?status=Terlambat
+- **Base URL Vercel:** https://api-peminjaman-buku.vercel.app
+- Cek server: https://api-peminjaman-buku.vercel.app/api/health
+- Daftar peminjaman: https://api-peminjaman-buku.vercel.app/api/loans
+- Filter terlambat: https://api-peminjaman-buku.vercel.app/api/loans?status=Terlambat
 
 ## Repository
 
