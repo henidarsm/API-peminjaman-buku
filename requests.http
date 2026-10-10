@@ -1,0 +1,38 @@
+@baseUrl = http://localhost:3000
+@loanId = GANTI_DENGAN_ID_DARI_RESPONSE_POST
+
+### Cek API
+GET {{baseUrl}}/api/health
+
+### Tambah peminjaman
+POST {{baseUrl}}/api/loans
+Content-Type: application/json
+
+{
+  "member_name": "Budi Santoso",
+  "member_email": "budi@example.com",
+  "book_title": "Laskar Pelangi",
+  "author": "Andrea Hirata",
+  "loan_date": "2026-10-10",
+  "due_date": "2026-10-17"
+}
+
+### Lihat semua peminjaman
+GET {{baseUrl}}/api/loans
+
+### Filter peminjaman terlambat
+GET {{baseUrl}}/api/loans?status=Terlambat
+
+### Lihat satu peminjaman
+GET {{baseUrl}}/api/loans/{{loanId}}
+
+### Ubah data/status (PATCH hanya mengubah field yang dikirim)
+PATCH {{baseUrl}}/api/loans/{{loanId}}
+Content-Type: application/json
+
+{
+  "status": "Dikembalikan"
+}
+
+### Hapus data (permanen)
+DELETE {{baseUrl}}/api/loans/{{loanId}}
