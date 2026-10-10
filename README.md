@@ -229,7 +229,6 @@ perpustakaan-api/
 ├── .env.example
 ├── .gitignore
 ├── README.md
-├── TUTORIAL.md
 ├── package.json
 ├── requests.http
 ├── vercel.json
