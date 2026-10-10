@@ -160,7 +160,16 @@ Di Windows Command Prompt:
 copy .env.example .env
 ```
 
-Di `.env`, isi `SUPABASE_URL` dengan **Project URL** dan `SUPABASE_KEY` dengan **anon/public key** dari Supabase → **Project Settings** → **API** (atau **Data API / API Keys**, tergantung tampilan dashboard). Jangan memakai atau membagikan `service_role` key.
+Isi file `.env` seperti berikut (nilai diambil dari Supabase → **Project Settings** → **API Keys**):
+
+```dotenv
+SUPABASE_URL=https://YOUR_PROJECT_ID.supabase.co
+SUPABASE_KEY=YOUR_SUPABASE_PUBLISHABLE_KEY
+PORT=3000
+NODE_ENV=development
+```
+
+`SUPABASE_KEY` diisi dengan **publishable/anon key** (diawali `sb_publishable_`). Jangan memakai atau membagikan `secret`/`service_role` key. File `.env` tidak ikut diunggah ke GitHub karena sudah tercantum di `.gitignore`.
 
 ### 4. Pasang dependency dan jalankan
 
@@ -195,9 +204,9 @@ Tes ini memeriksa validasi dan aturan status tanpa perlu koneksi Supabase.
    ```bash
    git init
    git add .
-   git commit -m "Build API peminjaman buku"
+   git commit -m "API peminjaman buku"
    git branch -M main
-   git remote add origin https://github.com/USERNAME/NAMA-REPOSITORY.git
+   git remote add origin https://github.com/henidarsm/API-peminjaman-buku.git
    git push -u origin main
    ```
 
@@ -211,8 +220,7 @@ Tes ini memeriksa validasi dan aturan status tanpa perlu koneksi Supabase.
    - `SUPABASE_URL` = Project URL Supabase
    - `SUPABASE_KEY` = anon/public key Supabase
 4. Klik **Deploy**. `vercel.json` sudah mengarahkan request ke `src/index.js`.
-5. Setelah berhasil, uji `https://NAMA-PROYEK.vercel.app/api/health`, lalu coba `/api/loans`.
-6. Masukkan Base URL Vercel yang berhasil diuji ke README dan form pengumpulan. Belum ada URL deployment di source ini; Vercel membuat URL setelah akun dan repository milikmu dihubungkan.
+5. Setelah berhasil, uji `https://LINK-VERCEL-KAMU.vercel.app/api/health`, lalu coba `/api/loans`.
 
 ## Susunan folder
 
@@ -243,13 +251,11 @@ perpustakaan-api/
 
 ## Link deployment
 
-- **Base URL Vercel:** `BELUM DIISI — ganti dengan URL Vercel setelah deployment berhasil dan endpoint diuji.`
-- Contoh URL setelah deployment: `https://nama-proyek.vercel.app`
+- **Base URL Vercel:** https://LINK-VERCEL-KAMU.vercel.app
+- Cek server: https://LINK-VERCEL-KAMU.vercel.app/api/health
+- Daftar peminjaman: https://LINK-VERCEL-KAMU.vercel.app/api/loans
+- Filter terlambat: https://LINK-VERCEL-KAMU.vercel.app/api/loans?status=Terlambat
 
-Jangan mengumpulkan README dengan placeholder di atas. Ganti dengan URL deployment milikmu sebelum pengumpulan.
+## Repository
 
-## Pengumpulan
-
-- Repository GitHub publik: isi URL repository milikmu setelah dibuat.
-- Base URL Vercel: gunakan URL pada bagian **Link deployment** setelah deployment selesai dan endpoint diuji.
-- Form responsi: https://forms.gle/zoenPqxKaX5mCy8a7
+- GitHub: https://github.com/henidarsm/API-peminjaman-buku
